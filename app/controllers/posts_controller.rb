@@ -15,8 +15,10 @@ class PostsController < ApplicationController
       post.update(checked: false)
     else
       post.update(checked: true)
+    end
+
+    item = Post.find(params[:id])
+    render json: { post: item }
   end
 
-  item =Pos.find(params[:id])
-  render json: { post: item }
 end
